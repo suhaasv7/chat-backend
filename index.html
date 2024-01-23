@@ -10,25 +10,47 @@
     ></script>
     <script defer src="js/client.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <nav>
-      <img src="public/chat.png" alt="logo" class="logo" />
-    </nav>
-    <div class="container">
-      <div class="message right">Hi how are you?</div>
-      <div class="message left">Good, how are you doing?</div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h2>Enter your name to join</h2>
+        <input type="text" id="userName" placeholder="Enter your name" />
+        <button id="submitBtn">Submit</button>
+      </div>
     </div>
-    <div class="send-container">
-      <form action="#" id="send">
-        <input
-          type="text"
-          name="messageInp"
-          id="mesInput"
-          placeholder="Type something..."
-        />
-        <button class="btn" type="submit">Send</button>
-      </form>
+
+    <!-- Main Body -->
+    <div class="mainWithMembers">
+      <div id="mainContent" style="display: none">
+        <nav>
+          <div>
+            <img src="public/chat.png" alt="logo" class="logo" />
+            <span>Realtime Chat App</span>
+          </div>
+          <div id="name"></div>
+        </nav>
+        <div class="container"></div>
+        <div class="send-container">
+          <form action="#" id="send">
+            <input
+              type="text"
+              name="messageInp"
+              id="mesInput"
+              placeholder="Type something..."
+            />
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div id="activeMembers"></div>
     </div>
   </body>
 </html>
