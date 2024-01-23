@@ -3,7 +3,7 @@ const socket = io("https://chat-application-skoy.onrender.com");
 const form = document.getElementById("send");
 const messageInp = document.getElementById("mesInput");
 const messageContainer = document.querySelector(".container");
-var audio = new Audio('/public/notification.mp3');
+var audio = new Audio('public/notification.mp3');
 
 const append = (message, position) => {
   const messageElement = document.createElement('div');
