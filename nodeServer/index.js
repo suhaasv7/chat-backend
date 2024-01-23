@@ -8,6 +8,15 @@ var io = require('socket.io')(server, {
   }
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+//creating a healthCheck path to check if the server is running
+app.get('/healthCheck', (req, res) => {
+  res.send('Server is running');
+});
+
 const users = {};
 
 io.on("connection", (socket) => {
