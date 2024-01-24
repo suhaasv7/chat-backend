@@ -2,7 +2,16 @@ body {
   background-color: black;
   max-width: 1400px;
   margin: auto;
-  padding: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 nav {
@@ -31,9 +40,11 @@ nav span {
 }
 
 .container {
-  background-color: rgb(19, 18, 18);
-  border: 1px solid black;
-  border-radius: 5px;
+  backdrop-filter: blur(8px) saturate(200%);
+  -webkit-backdrop-filter: blur(8px) saturate(200%);
+  background-color: rgba(17, 25, 40, 0.52);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   padding: 10px;
   max-width: 800px;
   margin: auto;
@@ -47,7 +58,11 @@ nav span {
 
 .message {
   position: relative;
-  background-color: rgb(51, 47, 47);
+  backdrop-filter: blur(0px) saturate(200%);
+  -webkit-backdrop-filter: blur(0px) saturate(200%);
+  background-color: rgba(17, 25, 40, 0.15);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0);
   width: 30%;
   color: white;
   padding: 10px;
@@ -59,7 +74,9 @@ nav span {
 
 .alert {
   width: 30%;
-  background-color: #1B304D;
+  backdrop-filter: blur(0px) saturate(200%);
+  -webkit-backdrop-filter: blur(0px) saturate(200%);
+  background-color: rgba(0, 27, 81, 0.56);
   color: white;
   text-align: center;
   padding: 10px;
@@ -106,23 +123,41 @@ nav span {
 
 .modal {
   display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  width: 30%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  backdrop-filter: blur(8px) saturate(200%);
+  -webkit-backdrop-filter: blur(8px) saturate(200%);
+  background-color: rgba(17, 25, 40, 0.52);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.modal-content input {
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+}
+
+.modal-content button {
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .timestamp-span {
@@ -146,4 +181,8 @@ nav span {
 .mainWithMembers {
   display: flex;
   justify-content: space-around;
+}
+
+*:focus {
+  outline: none;
 }
