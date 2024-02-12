@@ -2,16 +2,6 @@ const socket = io("https://chat-application-skoy.onrender.com");
 
 var audio = new Audio("public/notification.mp3");
 
-// const elementsValues = {
-//   send: "",
-//   msgInput: "",
-//   name: "",
-//   mainContent: "",
-//   myModal: "",
-//   submitBtn: "",
-//   userName: "",
-// };
-
 const form = document.getElementById("send");
 const messageInp = document.getElementById("mesInput");
 const displayName = document.getElementById("name");
@@ -21,10 +11,6 @@ let mainContent = document.getElementById("mainContent");
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("submitBtn");
 let input = document.getElementById("userName");
-
-// Object.keys(elementsValues).forEach((element) => {
-//   elementsValues[element] = document.getElementById(element);
-// });
 
 let members = [];
 
@@ -92,14 +78,6 @@ socket.on("user-joined", (name) => {
   if (name !== null) {
     appendAlert(`${name} joined the chat`, "left");
     members.push(name);
-    console.log(
-      "%c 🍠 members: ",
-      "font-size:12px;background-color: #EA7E5C;color:#fff;",
-      members
-    );
-    // const activeMember = document.createElement("div");
-    // activeMember.innerText = name;
-    // activeMembers.append(activeMember);
     appendActiveMember();
   }
 });
@@ -114,11 +92,6 @@ socket.on("left", (name) => {
   if (name !== null) {
     appendAlert(`${name} left the chat`, "left");
     members = members.filter((member) => member !== name);
-    console.log(
-      "%c 🥨 members: ",
-      "font-size:12px;background-color: #B03734;color:#fff;",
-      members
-    );
     appendActiveMember();
   }
 });
