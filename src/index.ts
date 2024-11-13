@@ -1,17 +1,8 @@
-import express, { Request, Response } from "express";
-import { Server as HttpServer } from "http";
 import { Server, Socket } from "socket.io";
 
-// Interface for users object
-interface Users {
-  [key: string]: string;
-}
-
-// Interface for the message object
-interface MessageData {
-  message: string;
-  name: string;
-}
+import express, { Request, Response } from "express";
+import { Server as HttpServer } from "http";
+import { MessageData, Users } from "./type";
 
 const app = express();
 const server: HttpServer = app.listen(8000);
